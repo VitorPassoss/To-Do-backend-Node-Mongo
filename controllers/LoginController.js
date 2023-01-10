@@ -4,7 +4,6 @@ var jwt = require('jsonwebtoken')
 
 const LoginController = {
         join: (req,res)=>{   
-            console.log(req.body)
             if(req.body.name != "" && req.body.email != "" && req.body.password != ""){
             User.find({email:req.body.email },function(error,response){
                 if(!error){
@@ -31,6 +30,8 @@ const LoginController = {
                     }else{
                         res.send("usuario não existe")
                     }
+                }else{
+                    res.send("erro")
                 }
 
             })

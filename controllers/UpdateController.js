@@ -2,8 +2,11 @@
 
 const UpdateController = {
     updatetask : (req,res) => {
-        const filter = { _id: req.params.id};
+        const filter = { _id: req.body.idtask};
         const update = { title:req.body.title,task:req.body.task, state:req.body.state};
+
+        console.log(update)
+        console.log(filter)
 
         Tasks.findOneAndUpdate(filter, update, function (err)
         {

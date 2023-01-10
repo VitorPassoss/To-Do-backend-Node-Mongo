@@ -15,6 +15,6 @@ router.post('/cadastro', CadastroController.sigin);
 router.post('/login', LoginController.join);
 router.post('/todoadd', TodoController.savetask);
 router.get('/delete/:id', DeleteController.deletetask)
-router.get('/update/:id', UpdateController.updatetask)
+router.post('/update/', UpdateController.updatetask)
 
 module.exports = router;
